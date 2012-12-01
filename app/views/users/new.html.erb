@@ -1,0 +1,26 @@
+<h1>Inlieu Giving</h1>
+
+<% provide(:title, 'Sign up') %>
+<h1>Sign up</h1>
+
+<div class="row">
+  <div class="span6 offset3">
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
+
+      <%= f.label :Name %>
+      <%= f.text_field :name %>
+
+      <%= f.label :email %>
+      <%= f.text_field :email %>
+
+      <%= f.label "Name your event" %>
+      <%= f.text_field :event %>
+
+	  <%= f.label "Inlieu of what? ex: Birthday, wedding, etc" %>
+      <%= f.text_field :inlieu %>
+      
+      <%= f.submit "Go create my campaign", class: "btn btn-large btn-primary" %>
+    <% end %>
+  </div>
+</div>

@@ -1,7 +1,16 @@
 InlieuLaunch::Application.routes.draw do
   #get "users/new"
+  
+  resources :users, :only => [:create, :show]
 
-  resources :users
+  namespace :admin do
+    resources :users, :except => :create
+  end
+
+  #scope :module => "admin" do
+    #resources :users, :except => :create
+  #end
+
 
   root to: 'users#new'
 
